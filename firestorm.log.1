@@ -1,0 +1,895 @@
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10001, pstmt-20000} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10001, pstmt-20001} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10001, pstmt-20002} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG Druid-ConnectionPool-Create-1438709449 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG Druid-ConnectionPool-Create-1438709449 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10003} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10003, pstmt-20000} created. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} created. SELECT
+        test1.file_list.id AS id,
+        test1.file_list.file_id AS fileId,
+        test1.file_list.file_name AS fileName,
+        test1.collect_list.collect_name AS collectName,
+        test1.file_list.collect_id AS collectId,
+        test1.file_list.upload_date AS uploadDate,
+        test1.file_list.last_update_date AS lastUpdateDate,
+        test1.file_list.last_update_user AS lastUpdateUser,
+        test1.file_list.uplaod_user AS uploadUser
+        FROM
+        test1.file_list
+        LEFT JOIN test1.collect_list ON test1.file_list.collect_id = test1.collect_list.id
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10002, pstmt-20001} created. SELECT
+        ifnull( file_list.id, '' ) AS fileListId,
+        IFNULL( file_list.file_name, '' ) AS fileName,
+        collect_list.id AS collectId,
+        IFNULL( file_list.upload_date, '' ) AS uploadDate,
+        IFNULL( file_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( file_list.last_update_user, '' ) AS lastUpdateUser,
+        IFNULL( file_list.uplaod_user, '' ) AS uploadUser,
+        collect_list.collect_name AS collectName,
+        IFNULL( collect_list.generate_date, '' ) AS generateDate,
+        IFNULL( collect_list.generate_user, '' ) AS generateUser,
+        IFNULL( collect_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( collect_list.last_update_user, '' ) AS lastUpdateUser
+        FROM
+        test1.collect_list
+        LEFT JOIN test1.file_list ON file_list.collect_id = collect_list.id
+        ORDER BY
+        collect_list.id
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : []
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10002, pstmt-20001} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10002, pstmt-20001} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10003, pstmt-20000} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10003, pstmt-20000} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10003, pstmt-20000} executed. 8.569949 millis. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Header: [id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 16.043997 millis. SELECT
+        test1.file_list.id AS id,
+        test1.file_list.file_id AS fileId,
+        test1.file_list.file_name AS fileName,
+        test1.collect_list.collect_name AS collectName,
+        test1.file_list.collect_id AS collectId,
+        test1.file_list.upload_date AS uploadDate,
+        test1.file_list.last_update_date AS lastUpdateDate,
+        test1.file_list.last_update_user AS lastUpdateUser,
+        test1.file_list.uplaod_user AS uploadUser
+        FROM
+        test1.file_list
+        LEFT JOIN test1.collect_list ON test1.file_list.collect_id = test1.collect_list.id
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10002, pstmt-20001} executed. 17.295049 millis. SELECT
+        ifnull( file_list.id, '' ) AS fileListId,
+        IFNULL( file_list.file_name, '' ) AS fileName,
+        collect_list.id AS collectId,
+        IFNULL( file_list.upload_date, '' ) AS uploadDate,
+        IFNULL( file_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( file_list.last_update_user, '' ) AS lastUpdateUser,
+        IFNULL( file_list.uplaod_user, '' ) AS uploadUser,
+        collect_list.collect_name AS collectName,
+        IFNULL( collect_list.generate_date, '' ) AS generateDate,
+        IFNULL( collect_list.generate_user, '' ) AS generateUser,
+        IFNULL( collect_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( collect_list.last_update_user, '' ) AS lastUpdateUser
+        FROM
+        test1.collect_list
+        LEFT JOIN test1.file_list ON file_list.collect_id = collect_list.id
+        ORDER BY
+        collect_list.id
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Header: [fileListId, fileName, id, uploadDate, lastUpdateDate, lastUpdateUser, uploadUser, collect_name, generateDate, generateUser, lastUpdateDate, lastUpdateUser]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Header: [id, file_id, file_name, collect_name, collect_id, upload_date, last_update_date, last_update_user, uplaod_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [31, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [12, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [1, null, 收藏夹ABC, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [32, output-20200303115102.txt, 1, 2020-03-03 12:07:56, 2020-03-03 12:07:56, , , 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [33, 数据同步比对.xlsx, 1, 2020-03-03 12:07:56, 2020-03-03 12:07:56, , , 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [18, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [2, null, 收藏夹B, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [26, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [13, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [12, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [30, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [16, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [25, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [19, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [29, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [14, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [14, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [24, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [3, null, 收藏夹C, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [15, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [17, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [16, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [20, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [4, null, 收藏夹D, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [21, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [5, null, 收藏夹E, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [15, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [23, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [6, null, 收藏夹F, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [28, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [17, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [13, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [7, null, 收藏夹G, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [22, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [8, null, 收藏夹H, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [18, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [27, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [9, null, 收藏夹I, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 6, , , , , 收藏夹F, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 7, , , , , 收藏夹G, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [19, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [10, null, 收藏夹J, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 8, , , , , 收藏夹H, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [20, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [11, null, 收藏夹K, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [21, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [12, null, 收藏夹L, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 9, , , , , 收藏夹I, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [22, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [13, null, 收藏夹M, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 10, , , , , 收藏夹J, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 11, , , , , 收藏夹K, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [23, null, ddd, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [23, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 12, , , , , 收藏夹L, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [24, null, ffff, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 13, , , , , 收藏夹M, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [26, null, DDDD, 2020-02-26 16:24:37.0, null, 2020-02-23 16:24:37.0, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [24, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 23, , , , , ddd, 2020-02-23 00:00:00, , 2020-02-23 00:00:00, ]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 24, , , , , ffff, 2020-02-23 00:00:00, , 2020-02-23 00:00:00, ]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [25, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 26, , , , , DDDD, 2020-02-26 16:24:37, , 2020-02-23 16:24:37, ]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [26, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 27, , , , , AAAAAA, , , , ]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 28, , , , , asdfas, 2020-02-25 11:21:48, , 2020-02-25 11:21:48, ]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 29, , , , , GGGGGG, 2020-02-25 12:01:59, , 2020-02-25 12:01:59, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [27, null, AAAAAA, null, null, null, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 30, , , , , GGGG, 2020-02-25 13:00:58, , 2020-02-25 13:00:58, ]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [27, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 31, , , , , DDD, 2020-02-26 12:08:23, , 2020-02-26 12:08:23, ]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 32, , , , , DDDDD, 2020-02-26 12:10:45, , 2020-02-26 12:10:45, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [28, null, asdfas, 2020-02-25 11:21:48.0, null, 2020-02-25 11:21:48.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 33, , , , , DDDDD, 2020-02-26 12:21:56, , 2020-02-26 12:21:56, ]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} Result: [, , 34, , , , , DDDD, 2020-02-26 12:24:30, , 2020-02-26 12:24:30, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [29, null, GGGGGG, 2020-02-25 12:01:59.0, null, 2020-02-25 12:01:59.0, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [28, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [30, null, GGGG, 2020-02-25 13:00:58.0, null, 2020-02-25 13:00:58.0, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [29, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [31, null, DDD, 2020-02-26 12:08:23.0, null, 2020-02-26 12:08:23.0, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [30, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10002, pstmt-20001, rs-50002} closed
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [32, null, DDDDD, 2020-02-26 12:10:45.0, null, 2020-02-26 12:10:45.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10002, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [33, null, DDDDD, 2020-02-26 12:21:56.0, null, 2020-02-26 12:21:56.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} Result: [34, null, DDDD, 2020-02-26 12:24:30.0, null, 2020-02-26 12:24:30.0, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [31, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10003, pstmt-20000, rs-50000} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10003, pstmt-20000} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10003} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [32, null, output-20200303115102.txt, 收藏夹ABC, 1, 2020-03-03 12:07:56.0, 2020-03-03 12:07:56.0, null, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} Result: [33, null, 数据同步比对.xlsx, 收藏夹ABC, 1, 2020-03-03 12:07:56.0, 2020-03-03 12:07:56.0, null, null]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50001} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} created. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 0.981088 millis. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Header: [id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [1, null, 收藏夹ABC, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [2, null, 收藏夹B, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [3, null, 收藏夹C, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [4, null, 收藏夹D, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [5, null, 收藏夹E, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [6, null, 收藏夹F, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [7, null, 收藏夹G, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [8, null, 收藏夹H, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [9, null, 收藏夹I, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [10, null, 收藏夹J, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [11, null, 收藏夹K, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [12, null, 收藏夹L, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [13, null, 收藏夹M, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [23, null, ddd, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [24, null, ffff, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [26, null, DDDD, 2020-02-26 16:24:37.0, null, 2020-02-23 16:24:37.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [27, null, AAAAAA, null, null, null, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [28, null, asdfas, 2020-02-25 11:21:48.0, null, 2020-02-25 11:21:48.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [29, null, GGGGGG, 2020-02-25 12:01:59.0, null, 2020-02-25 12:01:59.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [30, null, GGGG, 2020-02-25 13:00:58.0, null, 2020-02-25 13:00:58.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [31, null, DDD, 2020-02-26 12:08:23.0, null, 2020-02-26 12:08:23.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [32, null, DDDDD, 2020-02-26 12:10:45.0, null, 2020-02-26 12:10:45.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [33, null, DDDDD, 2020-02-26 12:21:56.0, null, 2020-02-26 12:21:56.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [34, null, DDDD, 2020-02-26 12:24:30.0, null, 2020-02-26 12:24:30.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} closed
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG Druid-ConnectionPool-Destroy-1438709449 druid.sql.Connection - {conn-10002} closed
+DEBUG Druid-ConnectionPool-Destroy-1438709449 druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10001, pstmt-20002} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10001, pstmt-20003} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} created. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+            
+            
+                and password = ?
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} Parameters : [admin, 123]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} executed. 15.16658 millis. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+            
+            
+                and password = ?
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} Header: [id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} Result: [1, 1, admin, 123, admin, admin, admin, admin, 1, 1, 1, 1, admin, 2020-03-28 10:11:16, 2020-03-28 10:11:16.0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} created. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [admin]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 1.131676 millis. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Header: [id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Result: [1, 1, admin, 123, admin, admin, admin, admin, 1, 1, 1, 1, admin, 2020-03-28 10:11:16, 2020-03-28 10:11:16.0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} created. select
+        id, pid, level, icon, u.index, title, has_child, role, status
+        from test1.user_auth u
+         WHERE  role like CONCAT('%',?,'%')
+            
+            
+                and status = ?
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : [admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 4.790516 millis. select
+        id, pid, level, icon, u.index, title, has_child, role, status
+        from test1.user_auth u
+         WHERE  role like CONCAT('%',?,'%')
+            
+            
+                and status = ?
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Header: [id, pid, level, icon, index, title, has_child, role, status]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [1, null, 1, el-icon-lx-home, dashboard, 系统首页, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [2, null, 1, el-icon-lx-calendar, 2, List库, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [3, null, 1, el-icon-lx-cascades, 3, 人才库, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [4, null, 1, el-icon-lx-calendar, 4, 表单相关, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [5, 4, 2, el-icon-lx-calendar, form, 基本表单, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [6, 4, 2, el-icon-lx-calendar, 3-2, 三级菜单, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [7, 6, 3, el-icon-lx-calendar, editor, 富文本编辑器, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [8, 6, 3, el-icon-lx-calendar, markdown, markdown编辑器, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [9, 4, 2, el-icon-lx-calendar, upload, 文件上传, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [10, null, 1, el-icon-lx-emoji, icon, 自定义图标, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [11, null, 1, el-icon-pie-chart, charts, schart图表, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [12, null, 1, el-icon-rank, 6, 拖拽组件, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [13, 12, 2, el-icon-lx-calendar, drag, 拖拽列表, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [14, 12, 2, el-icon-lx-calendar, dialog, 拖拽弹框, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [15, null, 1, el-icon-lx-global, i18n, 国际化功能, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [16, null, 1, el-icon-lx-warn, 7, 错误处理, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [17, 16, 2, el-icon-lx-calendar, permission, 权限测试, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [18, 16, 2, el-icon-lx-calendar, 404, 404页面, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [19, 2, 2, el-icon-lx-calendar, list_tabs, 所有List, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [22, 3, 2, el-icon-lx-calendar, talentTable, 所有人才, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [25, 3, 2, el-icon-lx-calendar, personCollectList, 收藏夹, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [26, 3, 2, el-icon-lx-calendar, personProjectList, 项目清单, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} created. SELECT
+        test1.file_list.id AS id,
+        test1.file_list.file_id AS fileId,
+        test1.file_list.file_name AS fileName,
+        test1.collect_list.collect_name AS collectName,
+        test1.file_list.collect_id AS collectId,
+        test1.file_list.upload_date AS uploadDate,
+        test1.file_list.last_update_date AS lastUpdateDate,
+        test1.file_list.last_update_user AS lastUpdateUser,
+        test1.file_list.uplaod_user AS uploadUser
+        FROM
+        test1.file_list
+        LEFT JOIN test1.collect_list ON test1.file_list.collect_id = test1.collect_list.id
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 26.627035 millis. SELECT
+        test1.file_list.id AS id,
+        test1.file_list.file_id AS fileId,
+        test1.file_list.file_name AS fileName,
+        test1.collect_list.collect_name AS collectName,
+        test1.file_list.collect_id AS collectId,
+        test1.file_list.upload_date AS uploadDate,
+        test1.file_list.last_update_date AS lastUpdateDate,
+        test1.file_list.last_update_user AS lastUpdateUser,
+        test1.file_list.uplaod_user AS uploadUser
+        FROM
+        test1.file_list
+        LEFT JOIN test1.collect_list ON test1.file_list.collect_id = test1.collect_list.id
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} open
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Header: [id, file_id, file_name, collect_name, collect_id, upload_date, last_update_date, last_update_user, uplaod_user]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [12, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [13, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [14, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [15, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG Druid-ConnectionPool-Create-723506723 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [16, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [17, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [18, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [19, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [20, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [21, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG Druid-ConnectionPool-Create-723506723 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [22, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10003} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20004} created. SELECT
+        ifnull( file_list.id, '' ) AS fileListId,
+        IFNULL( file_list.file_name, '' ) AS fileName,
+        collect_list.id AS collectId,
+        IFNULL( file_list.upload_date, '' ) AS uploadDate,
+        IFNULL( file_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( file_list.last_update_user, '' ) AS lastUpdateUser,
+        IFNULL( file_list.uplaod_user, '' ) AS uploadUser,
+        collect_list.collect_name AS collectName,
+        IFNULL( collect_list.generate_date, '' ) AS generateDate,
+        IFNULL( collect_list.generate_user, '' ) AS generateUser,
+        IFNULL( collect_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( collect_list.last_update_user, '' ) AS lastUpdateUser
+        FROM
+        test1.collect_list
+        LEFT JOIN test1.file_list ON file_list.collect_id = collect_list.id
+        ORDER BY
+        collect_list.id
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20004} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20004} Types : []
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [23, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10003, pstmt-20005} created. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10003, pstmt-20005} Parameters : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10003, pstmt-20005} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20004} executed. 4.273466 millis. SELECT
+        ifnull( file_list.id, '' ) AS fileListId,
+        IFNULL( file_list.file_name, '' ) AS fileName,
+        collect_list.id AS collectId,
+        IFNULL( file_list.upload_date, '' ) AS uploadDate,
+        IFNULL( file_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( file_list.last_update_user, '' ) AS lastUpdateUser,
+        IFNULL( file_list.uplaod_user, '' ) AS uploadUser,
+        collect_list.collect_name AS collectName,
+        IFNULL( collect_list.generate_date, '' ) AS generateDate,
+        IFNULL( collect_list.generate_user, '' ) AS generateUser,
+        IFNULL( collect_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( collect_list.last_update_user, '' ) AS lastUpdateUser
+        FROM
+        test1.collect_list
+        LEFT JOIN test1.file_list ON file_list.collect_id = collect_list.id
+        ORDER BY
+        collect_list.id
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10003, pstmt-20005} executed. 1.35859 millis. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Header: [fileListId, fileName, id, uploadDate, lastUpdateDate, lastUpdateUser, uploadUser, collect_name, generateDate, generateUser, lastUpdateDate, lastUpdateUser]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Header: [id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [31, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [1, null, 收藏夹ABC, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [24, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [32, output-20200303115102.txt, 1, 2020-03-03 12:07:56, 2020-03-03 12:07:56, , , 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [2, null, 收藏夹B, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [25, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [33, 数据同步比对.xlsx, 1, 2020-03-03 12:07:56, 2020-03-03 12:07:56, , , 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [3, null, 收藏夹C, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [18, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [26, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [26, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [4, null, 收藏夹D, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [12, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [30, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [27, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [5, null, 收藏夹E, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [16, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [25, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [28, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [6, null, 收藏夹F, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [19, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [29, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [29, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [7, null, 收藏夹G, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [14, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [30, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [24, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [8, null, 收藏夹H, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [17, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [31, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [9, null, 收藏夹I, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [20, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [32, null, output-20200303115102.txt, 收藏夹ABC, 1, 2020-03-03 12:07:56.0, 2020-03-03 12:07:56.0, null, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [21, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [10, null, 收藏夹J, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [15, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [33, null, 数据同步比对.xlsx, 收藏夹ABC, 1, 2020-03-03 12:07:56.0, 2020-03-03 12:07:56.0, null, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [23, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [11, null, 收藏夹K, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [28, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} closed
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [13, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [12, null, 收藏夹L, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [22, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [27, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [13, null, 收藏夹M, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 6, , , , , 收藏夹F, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 7, , , , , 收藏夹G, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [23, null, ddd, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-2 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 8, , , , , 收藏夹H, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-2 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 9, , , , , 收藏夹I, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [24, null, ffff, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 10, , , , , 收藏夹J, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 11, , , , , 收藏夹K, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [26, null, DDDD, 2020-02-26 16:24:37.0, null, 2020-02-23 16:24:37.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 12, , , , , 收藏夹L, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 13, , , , , 收藏夹M, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 23, , , , , ddd, 2020-02-23 00:00:00, , 2020-02-23 00:00:00, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 24, , , , , ffff, 2020-02-23 00:00:00, , 2020-02-23 00:00:00, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 26, , , , , DDDD, 2020-02-26 16:24:37, , 2020-02-23 16:24:37, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 27, , , , , AAAAAA, , , , ]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [27, null, AAAAAA, null, null, null, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 28, , , , , asdfas, 2020-02-25 11:21:48, , 2020-02-25 11:21:48, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 29, , , , , GGGGGG, 2020-02-25 12:01:59, , 2020-02-25 12:01:59, ]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [28, null, asdfas, 2020-02-25 11:21:48.0, null, 2020-02-25 11:21:48.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 30, , , , , GGGG, 2020-02-25 13:00:58, , 2020-02-25 13:00:58, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 31, , , , , DDD, 2020-02-26 12:08:23, , 2020-02-26 12:08:23, ]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [29, null, GGGGGG, 2020-02-25 12:01:59.0, null, 2020-02-25 12:01:59.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 32, , , , , DDDDD, 2020-02-26 12:10:45, , 2020-02-26 12:10:45, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 33, , , , , DDDDD, 2020-02-26 12:21:56, , 2020-02-26 12:21:56, ]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [30, null, GGGG, 2020-02-25 13:00:58.0, null, 2020-02-25 13:00:58.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [, , 34, , , , , DDDD, 2020-02-26 12:24:30, , 2020-02-26 12:24:30, ]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} closed
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [31, null, DDD, 2020-02-26 12:08:23.0, null, 2020-02-26 12:08:23.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [32, null, DDDDD, 2020-02-26 12:10:45.0, null, 2020-02-26 12:10:45.0, null]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [33, null, DDDDD, 2020-02-26 12:21:56.0, null, 2020-02-26 12:21:56.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} Result: [34, null, DDDD, 2020-02-26 12:24:30.0, null, 2020-02-26 12:24:30.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20006} created. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20006} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20006} Types : []
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10003, pstmt-20005, rs-50005} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20006} executed. 1.69221 millis. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Header: [id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [1, null, 收藏夹ABC, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10003, pstmt-20005} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [2, null, 收藏夹B, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10003} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [3, null, 收藏夹C, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [4, null, 收藏夹D, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [5, null, 收藏夹E, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [6, null, 收藏夹F, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [7, null, 收藏夹G, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [8, null, 收藏夹H, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [9, null, 收藏夹I, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [10, null, 收藏夹J, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [11, null, 收藏夹K, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [12, null, 收藏夹L, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [13, null, 收藏夹M, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [23, null, ddd, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [24, null, ffff, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [26, null, DDDD, 2020-02-26 16:24:37.0, null, 2020-02-23 16:24:37.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [27, null, AAAAAA, null, null, null, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [28, null, asdfas, 2020-02-25 11:21:48.0, null, 2020-02-25 11:21:48.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [29, null, GGGGGG, 2020-02-25 12:01:59.0, null, 2020-02-25 12:01:59.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [30, null, GGGG, 2020-02-25 13:00:58.0, null, 2020-02-25 13:00:58.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [31, null, DDD, 2020-02-26 12:08:23.0, null, 2020-02-26 12:08:23.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [32, null, DDDDD, 2020-02-26 12:10:45.0, null, 2020-02-26 12:10:45.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [33, null, DDDDD, 2020-02-26 12:21:56.0, null, 2020-02-26 12:21:56.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} Result: [34, null, DDDD, 2020-02-26 12:24:30.0, null, 2020-02-26 12:24:30.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10002, pstmt-20006, rs-50006} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10002, pstmt-20006} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG Druid-ConnectionPool-Destroy-723506723 druid.sql.Connection - {conn-10001} closed
+DEBUG Druid-ConnectionPool-Destroy-723506723 druid.sql.Connection - {conn-10003} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10002, pstmt-20004} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10002, pstmt-20006} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} created. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+            
+            
+                and password = ?
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} Parameters : [admin, 123]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} executed. 12.154136 millis. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+            
+            
+                and password = ?
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} Header: [id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} Result: [1, 1, admin, 123, admin, admin, admin, admin, 1, 1, 1, 1, admin, 2020-03-28 10:11:16, 2020-03-28 10:11:16.0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20000, rs-50000} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20000} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} created. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Parameters : [admin]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} Types : [VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} executed. 0.857941 millis. select
+        id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date
+        from test1.person
+         WHERE  name = ?
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Header: [id, person_id, name, password, company, post, city, salary, age, telephone, mail, status, role, last_contact_time, create_date]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} Result: [1, 1, admin, 123, admin, admin, admin, admin, 1, 1, 1, 1, admin, 2020-03-28 10:11:16, 2020-03-28 10:11:16.0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20001, rs-50001} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20001} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} created. select
+        id, pid, level, icon, u.index, title, has_child, role, status
+        from test1.user_auth u
+         WHERE  role like CONCAT('%',?,'%')
+            
+            
+                and status = ?
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Parameters : [admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} Types : [VARCHAR, VARCHAR]
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} executed. 4.431462 millis. select
+        id, pid, level, icon, u.index, title, has_child, role, status
+        from test1.user_auth u
+         WHERE  role like CONCAT('%',?,'%')
+            
+            
+                and status = ?
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} open
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Header: [id, pid, level, icon, index, title, has_child, role, status]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [1, null, 1, el-icon-lx-home, dashboard, 系统首页, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [2, null, 1, el-icon-lx-calendar, 2, List库, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [3, null, 1, el-icon-lx-cascades, 3, 人才库, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [4, null, 1, el-icon-lx-calendar, 4, 表单相关, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [5, 4, 2, el-icon-lx-calendar, form, 基本表单, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [6, 4, 2, el-icon-lx-calendar, 3-2, 三级菜单, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [7, 6, 3, el-icon-lx-calendar, editor, 富文本编辑器, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [8, 6, 3, el-icon-lx-calendar, markdown, markdown编辑器, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [9, 4, 2, el-icon-lx-calendar, upload, 文件上传, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [10, null, 1, el-icon-lx-emoji, icon, 自定义图标, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [11, null, 1, el-icon-pie-chart, charts, schart图表, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [12, null, 1, el-icon-rank, 6, 拖拽组件, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [13, 12, 2, el-icon-lx-calendar, drag, 拖拽列表, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [14, 12, 2, el-icon-lx-calendar, dialog, 拖拽弹框, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [15, null, 1, el-icon-lx-global, i18n, 国际化功能, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [16, null, 1, el-icon-lx-warn, 7, 错误处理, Y, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [17, 16, 2, el-icon-lx-calendar, permission, 权限测试, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [18, 16, 2, el-icon-lx-calendar, 404, 404页面, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [19, 2, 2, el-icon-lx-calendar, list_tabs, 所有List, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [22, 3, 2, el-icon-lx-calendar, talentTable, 所有人才, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [25, 3, 2, el-icon-lx-calendar, personCollectList, 收藏夹, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} Result: [26, 3, 2, el-icon-lx-calendar, personProjectList, 项目清单, N, user,admin, 0]
+DEBUG http-nio-8084-exec-1 druid.sql.ResultSet - {conn-10001, pstmt-20002, rs-50002} closed
+DEBUG http-nio-8084-exec-1 druid.sql.Statement - {conn-10001, pstmt-20002} clearParameters. 
+DEBUG http-nio-8084-exec-1 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20003} created. SELECT
+        test1.file_list.id AS id,
+        test1.file_list.file_id AS fileId,
+        test1.file_list.file_name AS fileName,
+        test1.collect_list.collect_name AS collectName,
+        test1.file_list.collect_id AS collectId,
+        test1.file_list.upload_date AS uploadDate,
+        test1.file_list.last_update_date AS lastUpdateDate,
+        test1.file_list.last_update_user AS lastUpdateUser,
+        test1.file_list.uplaod_user AS uploadUser
+        FROM
+        test1.file_list
+        LEFT JOIN test1.collect_list ON test1.file_list.collect_id = test1.collect_list.id
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20003} Parameters : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20003} Types : []
+DEBUG Druid-ConnectionPool-Create-1349688134 druid.sql.Connection - {conn-10002} connected
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10002, pstmt-20004} created. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10002, pstmt-20004} Parameters : []
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10002, pstmt-20004} Types : []
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20003} executed. 8.350738 millis. SELECT
+        test1.file_list.id AS id,
+        test1.file_list.file_id AS fileId,
+        test1.file_list.file_name AS fileName,
+        test1.collect_list.collect_name AS collectName,
+        test1.file_list.collect_id AS collectId,
+        test1.file_list.upload_date AS uploadDate,
+        test1.file_list.last_update_date AS lastUpdateDate,
+        test1.file_list.last_update_user AS lastUpdateUser,
+        test1.file_list.uplaod_user AS uploadUser
+        FROM
+        test1.file_list
+        LEFT JOIN test1.collect_list ON test1.file_list.collect_id = test1.collect_list.id
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} open
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Header: [id, file_id, file_name, collect_name, collect_id, upload_date, last_update_date, last_update_user, uplaod_user]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10002, pstmt-20004} executed. 1.68828 millis. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} open
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Header: [id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [12, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [1, null, 收藏夹ABC, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [2, null, 收藏夹B, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [3, null, 收藏夹C, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [4, null, 收藏夹D, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [5, null, 收藏夹E, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [6, null, 收藏夹F, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [13, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [7, null, 收藏夹G, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [14, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [8, null, 收藏夹H, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [9, null, 收藏夹I, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [10, null, 收藏夹J, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG Druid-ConnectionPool-Create-1349688134 druid.sql.Connection - {conn-10003} connected
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [11, null, 收藏夹K, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [12, null, 收藏夹L, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [13, null, 收藏夹M, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [23, null, ddd, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [24, null, ffff, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [26, null, DDDD, 2020-02-26 16:24:37.0, null, 2020-02-23 16:24:37.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [15, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [16, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [17, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [18, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [27, null, AAAAAA, null, null, null, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [19, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [28, null, asdfas, 2020-02-25 11:21:48.0, null, 2020-02-25 11:21:48.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [20, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [29, null, GGGGGG, 2020-02-25 12:01:59.0, null, 2020-02-25 12:01:59.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [21, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [22, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [23, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [24, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [25, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [26, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [30, null, GGGG, 2020-02-25 13:00:58.0, null, 2020-02-25 13:00:58.0, null]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [31, null, DDD, 2020-02-26 12:08:23.0, null, 2020-02-26 12:08:23.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [27, null, 3123bb.txt, 收藏夹E, 5, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [32, null, DDDDD, 2020-02-26 12:10:45.0, null, 2020-02-26 12:10:45.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [28, null, 3123bb.txt, 收藏夹D, 4, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [33, null, DDDDD, 2020-02-26 12:21:56.0, null, 2020-02-26 12:21:56.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [29, null, 3123bb.txt, 收藏夹C, 3, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} Result: [34, null, DDDD, 2020-02-26 12:24:30.0, null, 2020-02-26 12:24:30.0, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [30, null, 3123bb.txt, 收藏夹B, 2, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50004} closed
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [31, null, 3123bb.txt, 收藏夹ABC, 1, 2020-02-15 15:56:17.0, 2020-02-15 10:56:29.0, FFF, FFF]
+DEBUG http-nio-8084-exec-4 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-4 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [32, null, output-20200303115102.txt, 收藏夹ABC, 1, 2020-03-03 12:07:56.0, 2020-03-03 12:07:56.0, null, null]
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} Result: [33, null, 数据同步比对.xlsx, 收藏夹ABC, 1, 2020-03-03 12:07:56.0, 2020-03-03 12:07:56.0, null, null]
+DEBUG http-nio-8084-exec-3 druid.sql.ResultSet - {conn-10001, pstmt-20003, rs-50003} closed
+DEBUG http-nio-8084-exec-3 druid.sql.Statement - {conn-10001, pstmt-20003} clearParameters. 
+DEBUG http-nio-8084-exec-3 druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20005} created. SELECT
+        ifnull( file_list.id, '' ) AS fileListId,
+        IFNULL( file_list.file_name, '' ) AS fileName,
+        collect_list.id AS collectId,
+        IFNULL( file_list.upload_date, '' ) AS uploadDate,
+        IFNULL( file_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( file_list.last_update_user, '' ) AS lastUpdateUser,
+        IFNULL( file_list.uplaod_user, '' ) AS uploadUser,
+        collect_list.collect_name AS collectName,
+        IFNULL( collect_list.generate_date, '' ) AS generateDate,
+        IFNULL( collect_list.generate_user, '' ) AS generateUser,
+        IFNULL( collect_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( collect_list.last_update_user, '' ) AS lastUpdateUser
+        FROM
+        test1.collect_list
+        LEFT JOIN test1.file_list ON file_list.collect_id = collect_list.id
+        ORDER BY
+        collect_list.id
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20005} Parameters : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20005} Types : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20005} executed. 9.742554 millis. SELECT
+        ifnull( file_list.id, '' ) AS fileListId,
+        IFNULL( file_list.file_name, '' ) AS fileName,
+        collect_list.id AS collectId,
+        IFNULL( file_list.upload_date, '' ) AS uploadDate,
+        IFNULL( file_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( file_list.last_update_user, '' ) AS lastUpdateUser,
+        IFNULL( file_list.uplaod_user, '' ) AS uploadUser,
+        collect_list.collect_name AS collectName,
+        IFNULL( collect_list.generate_date, '' ) AS generateDate,
+        IFNULL( collect_list.generate_user, '' ) AS generateUser,
+        IFNULL( collect_list.last_update_date, '' ) AS lastUpdateDate,
+        IFNULL( collect_list.last_update_user, '' ) AS lastUpdateUser
+        FROM
+        test1.collect_list
+        LEFT JOIN test1.file_list ON file_list.collect_id = collect_list.id
+        ORDER BY
+        collect_list.id
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Header: [fileListId, fileName, id, uploadDate, lastUpdateDate, lastUpdateUser, uploadUser, collect_name, generateDate, generateUser, lastUpdateDate, lastUpdateUser]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [31, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [32, output-20200303115102.txt, 1, 2020-03-03 12:07:56, 2020-03-03 12:07:56, , , 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [33, 数据同步比对.xlsx, 1, 2020-03-03 12:07:56, 2020-03-03 12:07:56, , , 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [18, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [26, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [12, 3123bb.txt, 1, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹ABC, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [30, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [16, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [25, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [19, 3123bb.txt, 2, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹B, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [29, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [14, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [24, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [17, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [20, 3123bb.txt, 3, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹C, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [21, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [15, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [23, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [28, 3123bb.txt, 4, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹D, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [13, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [22, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [27, 3123bb.txt, 5, 2020-02-15 15:56:17, 2020-02-15 10:56:29, FFF, FFF, 收藏夹E, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 6, , , , , 收藏夹F, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 7, , , , , 收藏夹G, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 8, , , , , 收藏夹H, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 9, , , , , 收藏夹I, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 10, , , , , 收藏夹J, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 11, , , , , 收藏夹K, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 12, , , , , 收藏夹L, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 13, , , , , 收藏夹M, 2020-02-15 16:47:01, AAA, 2020-02-15 16:47:09, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 23, , , , , ddd, 2020-02-23 00:00:00, , 2020-02-23 00:00:00, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 24, , , , , ffff, 2020-02-23 00:00:00, , 2020-02-23 00:00:00, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 26, , , , , DDDD, 2020-02-26 16:24:37, , 2020-02-23 16:24:37, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 27, , , , , AAAAAA, , , , ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 28, , , , , asdfas, 2020-02-25 11:21:48, , 2020-02-25 11:21:48, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 29, , , , , GGGGGG, 2020-02-25 12:01:59, , 2020-02-25 12:01:59, ]

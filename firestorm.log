@@ -1,0 +1,80 @@
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 30, , , , , GGGG, 2020-02-25 13:00:58, , 2020-02-25 13:00:58, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 31, , , , , DDD, 2020-02-26 12:08:23, , 2020-02-26 12:08:23, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 32, , , , , DDDDD, 2020-02-26 12:10:45, , 2020-02-26 12:10:45, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 33, , , , , DDDDD, 2020-02-26 12:21:56, , 2020-02-26 12:21:56, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} Result: [, , 34, , , , , DDDD, 2020-02-26 12:24:30, , 2020-02-26 12:24:30, ]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20005, rs-50005} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20005} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10002} pool-connect
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20004} Parameters : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20004} Types : []
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20004} executed. 0.734799 millis. select
+        id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user
+        from test1.collect_list
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} open
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Header: [id, collect_id, collect_name, generate_date, generate_user, last_update_date, last_update_user]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [1, null, 收藏夹ABC, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [2, null, 收藏夹B, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [3, null, 收藏夹C, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [4, null, 收藏夹D, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [5, null, 收藏夹E, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [6, null, 收藏夹F, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [7, null, 收藏夹G, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [8, null, 收藏夹H, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [9, null, 收藏夹I, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [10, null, 收藏夹J, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [11, null, 收藏夹K, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [12, null, 收藏夹L, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [13, null, 收藏夹M, 2020-02-15 16:47:01.0, AAA, 2020-02-15 16:47:09.0, AAA]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [23, null, ddd, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [24, null, ffff, 2020-02-23 00:00:00.0, null, 2020-02-23 00:00:00.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [26, null, DDDD, 2020-02-26 16:24:37.0, null, 2020-02-23 16:24:37.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [27, null, AAAAAA, null, null, null, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [28, null, asdfas, 2020-02-25 11:21:48.0, null, 2020-02-25 11:21:48.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [29, null, GGGGGG, 2020-02-25 12:01:59.0, null, 2020-02-25 12:01:59.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [30, null, GGGG, 2020-02-25 13:00:58.0, null, 2020-02-25 13:00:58.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [31, null, DDD, 2020-02-26 12:08:23.0, null, 2020-02-26 12:08:23.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [32, null, DDDDD, 2020-02-26 12:10:45.0, null, 2020-02-26 12:10:45.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [33, null, DDDDD, 2020-02-26 12:21:56.0, null, 2020-02-26 12:21:56.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} Result: [34, null, DDDD, 2020-02-26 12:24:30.0, null, 2020-02-26 12:24:30.0, null]
+DEBUG http-nio-8084-exec-5 druid.sql.ResultSet - {conn-10002, pstmt-20004, rs-50006} closed
+DEBUG http-nio-8084-exec-5 druid.sql.Statement - {conn-10002, pstmt-20004} clearParameters. 
+DEBUG http-nio-8084-exec-5 druid.sql.Connection - {conn-10002} pool-recycle
+DEBUG Druid-ConnectionPool-Destroy-1349688134 druid.sql.Connection - {conn-10003} closed
+DEBUG Druid-ConnectionPool-Destroy-1349688134 druid.sql.Connection - {conn-10001} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10002, pstmt-20005} closed
+DEBUG SpringContextShutdownHook druid.sql.Statement - {conn-10002, pstmt-20004} closed
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10002} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
+DEBUG restartedMain druid.sql.Connection - {conn-10001} connected
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-connect
+DEBUG restartedMain druid.sql.Connection - {conn-10001} pool-recycle
+DEBUG SpringContextShutdownHook druid.sql.Connection - {conn-10001} closed
